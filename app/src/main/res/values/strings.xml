@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MifeelingsApp</string>
+    <string name="hint_uid">Enter User ID</string>
+    <string name="hint_uname">User Name</string>
+    <string name="phone_no">Enter Phone No</string>
+    <string name="gender">Enter Gender</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="text_login">Login</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_age">Enter Age</string>
+    <string name="text_not_member">No account yet? Create one</string>
+    <string name="text_already_member">Already a member? Login</string>
+    <string name="action_settings">Settings</string>
+    <string name="forgetpassword">Forget Password?</string>
+    <string name="userReg">User Signup</string>
+    <string name="singup">SignUp</string>
+    <string name="forgtpass">Forget Password</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="requestOpt">Request Opt</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="otptext">Your OTP sent to</string>
+    <string name="name">Fullname</string>
+    <string name="otptype">Enter OTP</string>
+    <string name="newpass">Enter New Password</string>
+    <string name="submit">Submit</string>
+    <string name="optreq">Request Otp</string>
+    <string name="title_activity_welcome">MiFellingApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/people"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:alpha="0.9"
+    tools:context=".User_Registration">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/userReg"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#ea4c88"/>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/singupId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="10dp"
+            android:hint="@string/hint_uid"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_register"
+            android:textColorHint="@color/input_register_hint"/>
+
+        <EditText
+            android:id="@+id/fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="10dp"
+            android:hint="@string/error_message_name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_register"
+            android:textColorHint="@color/input_register_hint"/>
+
+       <EditText
+           android:id="@+id/phone"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:background="@color/white"
+           android:drawableLeft="@drawable/phone"
+           android:drawablePadding="10dp"
+           android:hint="@string/phone_no"
+           android:inputType="phone"
+           android:padding="10dp"
+           android:singleLine="true"
+           android:textColor="@color/input_register"
+           android:textColorHint="@color/input_register_hint" />
+
+        <EditText
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/gender"
+            android:drawablePadding="10dp"
+            android:hint="@string/gender"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/input_register"
+            android:textColorHint="@color/input_register_hint" />
+       <EditText
+           android:id="@+id/age"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:background="@color/white"
+           android:drawableLeft="@drawable/age"
+           android:drawablePadding="10dp"
+           android:hint="@string/error_message_age"
+           android:inputType="number"
+           android:padding="10dp"
+           android:singleLine="true"
+           android:textColor="@color/input_register"
+           android:textColorHint="@color/input_register_hint" />
+       <EditText
+           android:id="@+id/email"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:background="@color/white"
+           android:drawableLeft="@drawable/email"
+           android:drawablePadding="10dp"
+           android:hint="@string/hint_email"
+           android:inputType="textEmailAddress"
+           android:padding="10dp"
+           android:singleLine="true"
+           android:textColor="@color/input_register"
+           android:textColorHint="@color/input_register_hint"/>
+
+       <EditText
+           android:id="@+id/password"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="10dp"
+           android:background="@color/white"
+           android:drawableLeft="@drawable/pass"
+           android:drawablePadding="10dp"
+           android:hint="@string/hint_password"
+           android:inputType="textPassword"
+           android:padding="10dp"
+           android:singleLine="true"
+           android:textColor="@color/input_register"
+           android:textColorHint="@color/input_register_hint"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/appCompatButtonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#ea4c88"
+            android:text="@string/singup" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/appCompatTextViewLoginLink"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#ea4c88"
+            android:layout_marginTop="15dp"
+            android:text="@string/text_already_member"
+            android:textSize="16dp" />
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v4.widget.NestedScrollView>
