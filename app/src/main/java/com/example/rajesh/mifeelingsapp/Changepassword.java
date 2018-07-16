@@ -69,7 +69,7 @@ public class Changepassword extends AppCompatActivity {
 
                 Log.e("oldpassword verify", oldpaswrd);
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
-                String passChangeApi = Host_ip_Config.hostIp+"/apis/manage-user/users/psw-rst";
+                String passChangeApi = Host_ip_Config.hostofficeIp+"/apis/manage-user/users/psw-rst";
                 JSONObject jsonBody = new JSONObject();
                 try {
                     jsonBody.put("_id",user_id);

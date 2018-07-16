@@ -172,6 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="20dp"
+                android:background="@color/white"
                 android:layout_marginTop="5dp"
                 android:paddingRight="20dp">
 
@@ -179,13 +180,13 @@
                     android:id="@+id/getpass"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:drawablePadding="10dp"
                     android:background="@color/white"
                     android:drawableLeft="@drawable/pass"
-                    android:text="Android Profile UI Design"
-                    android:visibility="invisible"
+                    android:padding="14dp"
+                    android:text="Android "
+                    android:visibility="visible"
                     android:textColor="@color/black" />
 
                 <Button

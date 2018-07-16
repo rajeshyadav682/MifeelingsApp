@@ -1,12 +1,12 @@
 package com.example.rajesh.mifeelingsapp;
 
-import android.app.LauncherActivity;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +31,6 @@ public class Category extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     List<CategoryDetails> categoryDetailsList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +44,11 @@ public class Category extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         categoryDetailsList = new ArrayList<>();
         String user_id = getIntent().getExtras().getString("_id");
-
         categoryDetails(user_id);
+
         }
-        public void categoryDetails(String user_id){
-        final String categoryApi ="http://110.227.190.241:7070/apis/manage-categories/cate_dt-usr-cate/dinesh007";
+        public void categoryDetails(final String user_id){
+        final String categoryApi =Host_ip_Config.hostofficeIp+"/apis/manage-categories/cate_dt-usr-cate/"+user_id;
             StringRequest stringRequest = new StringRequest(Request.Method.GET, categoryApi,
                     new Response.Listener<String>() {
                         @Override
@@ -72,7 +71,11 @@ public class Category extends AppCompatActivity {
                                             categoryitems.getString("cate_flw_cnt"),
                                             categoryitems.getString("cate_image"),
                                             categoryitems.getString("cate_name"),
-                                            categoryitems.getInt("user_cate_flw_status")
+                                            categoryitems.getInt("user_cate_flw_status"),
+                                            categoryitems.getString("_id"),
+                                            user_id
+
+
 
 
                                     ));

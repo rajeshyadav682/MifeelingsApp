@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
 
             RequestQueue queue = Volley.newRequestQueue(this);
-            String url = host_ip_config.hostofficeIp+"/apis/manage-user/users/" + user_id + "/" + pass;
+            String url = host_ip_config.hostofficeIp+"/apis/manage-user/users/"+user_id+"/"+pass;
             progressBar.setVisibility(View.VISIBLE);
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                     new Response.Listener<String>() {
@@ -109,8 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 JSONObject jsonObj = new JSONObject(response);
                                 String test = jsonObj.getString("msg");
                                 progressBar.setVisibility(View.GONE);
-
-
                                 if (test.equals("Success")) {
                                     Toast.makeText(activity, "Login Success", Toast.LENGTH_SHORT).show();
                                    userData = new UserData(MainActivity.this);

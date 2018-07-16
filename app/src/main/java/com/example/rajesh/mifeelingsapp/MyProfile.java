@@ -79,7 +79,7 @@ public class MyProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                updateDetails(user_id);
+
 
             }
         });
@@ -156,9 +156,10 @@ public class MyProfile extends AppCompatActivity {
                             profileDone.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
+                                    updateDetails(user_id);
                                     Toast.makeText(MyProfile.this, "Profile Details Updated", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
-                                    startActivity(intent);
+                                 /*   Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
+                                    startActivity(intent);*/
                                 }
                             });
 
@@ -199,8 +200,10 @@ public class MyProfile extends AppCompatActivity {
         });
         queue.add(stringRequest);
     }
+
     public void updateDetails(String id) {
         try {
+            Toast.makeText(this, "update method", Toast.LENGTH_SHORT).show();
             String updateName = textInputEditTextUserName.getText().toString();
             String updatePhoneNo = textInputEditTextPhone.getText().toString();
             String updateGender = textInputEditTextGender.getText().toString();
@@ -208,7 +211,6 @@ public class MyProfile extends AppCompatActivity {
             String updateAge = textInputEditTextAge.getText().toString();
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("_id", id);
             jsonBody.put("user_name", updateName);
             jsonBody.put("mob_no", updatePhoneNo);
             jsonBody.put("email", updateEmail);
@@ -222,7 +224,7 @@ public class MyProfile extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Log.e("Response is", response);
+                    Log.e(" update Response is", response);
                     if (response.equals("200")) {
                         Toast.makeText(getApplicationContext(), "Details Updated", Toast.LENGTH_SHORT).show();
                     }

@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 public class UserData {
     Context context;
-    private String userid;
+    public String userid;
     SharedPreferences sharedPreferences;
 
     public void removeUser() {
