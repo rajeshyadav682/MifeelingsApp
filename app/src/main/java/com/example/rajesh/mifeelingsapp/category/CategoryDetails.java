@@ -1,4 +1,4 @@
-package com.example.rajesh.mifeelingsapp;
+package com.example.rajesh.mifeelingsapp.category;
 public class CategoryDetails {
     public CategoryDetails( String totalFollowers ,String image,String cat_name,int userfolow,String id,String user_id) {
         this.image =image;

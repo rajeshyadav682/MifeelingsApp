@@ -8,14 +8,5 @@
     android:paddingRight="5dp"
     android:id="@+id/activitycategory"
     android:layout_height="match_parent"
-    tools:context=".Category">
-    <!--<android.support.v7.widget.Toolbar
-        android:id=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark">
-
-    </android.support.v7.widget.Toolbar>-->
+    tools:context=".category.category_events">
 </android.support.v7.widget.RecyclerView>

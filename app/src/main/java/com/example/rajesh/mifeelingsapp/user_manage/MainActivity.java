@@ -1,13 +1,8 @@
-package com.example.rajesh.mifeelingsapp;
+package com.example.rajesh.mifeelingsapp.user_manage;
 
 import android.content.Intent;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,12 +17,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.rajesh.mifeelingsapp.Host_ip_Config;
+import com.example.rajesh.mifeelingsapp.R;
+import com.example.rajesh.mifeelingsapp.Home_Page.UserData;
+import com.example.rajesh.mifeelingsapp.Home_Page.WelcomeActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private final AppCompatActivity activity = MainActivity.this;
     private EditText textInputEditTextEmail;
     private EditText textInputEditTextPassword;
     private Button btnlogin;
@@ -36,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
     Host_ip_Config host_ip_config;
     UserData userData;
+    String network_Error="com.android.volley.NoConnectionError: java.net.ConnectException: Network is unreachable";
+    String network_error_show = "Please Enable Internet Connection";
 
 
     @Override
@@ -43,14 +43,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-
         initViews();
         initListeners();
-
     }
 
-    private void initViews() {
 
+
+    private void initViews() {
         textInputEditTextEmail = (EditText) findViewById(R.id.inputId);
         textInputEditTextPassword = (EditText) findViewById(R.id.inputPass);
         createaccount =(TextView)findViewById(R.id.createaccountlink);
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void apiCall() {
 
         final String user_id = textInputEditTextEmail.getText().toString();
+        ((MyApplication) this.getApplication()).setUserId(user_id);
         String pass = textInputEditTextPassword.getText().toString();
 
         if (user_id.equals("")) {
@@ -107,29 +107,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //     Toast.makeText(activity, response.toString(), Toast.LENGTH_SHORT).show();
                             try {
                                 JSONObject jsonObj = new JSONObject(response);
-                                String test = jsonObj.getString("msg");
+                                int test = jsonObj.getInt("msg_code");
                                 progressBar.setVisibility(View.GONE);
-                                if (test.equals("Success")) {
-                                    Toast.makeText(activity, "Login Success", Toast.LENGTH_SHORT).show();
-                                   userData = new UserData(MainActivity.this);
+                                if (test == 1) {
+                                    Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+                                   userData = new UserData(getApplicationContext());
                                     userData.setUserid(user_id);
-                                    Intent intent = new Intent(getApplicationContext(),WelcomeActivity.class);
+                                    Log.e("userid - ",user_id);
+                                    Intent intent = new Intent(MainActivity.this,WelcomeActivity.class);
                                     intent.putExtra("_id",user_id);
                                     Log.e("userid intent",userData.getUserid());
                                     startActivity(intent);
-
+                                    overridePendingTransitionEnter();
                                 }
-                                if (test.equals("User & Password Not Match")) {
-                                    Toast.makeText(activity, "invalid user id and password", Toast.LENGTH_SHORT).show();
-
+                                if (test != 1) {
+                                    Toast.makeText(MainActivity.this, jsonObj.getString("msg"), Toast.LENGTH_SHORT).show();
                                 }
-
-
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                        //        Toast.makeText(activity, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                if (e.getMessage().equals("com.android.volley.NoConnectionError: java.net.ConnectException: Network is unreachable")){
-                                    Toast.makeText(activity, "please enable internet connection", Toast.LENGTH_SHORT).show();
+                                if (e.getMessage().equals(network_Error)){
+                                    Toast.makeText(MainActivity.this, network_error_show, Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -137,18 +134,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Log.e("That didn't work!", error.toString());
-                    if (error.toString().equals("com.android.volley.NoConnectionError: java.net.ConnectException: Network is unreachable")){
-                        Toast.makeText(activity, "please enable internet connection", Toast.LENGTH_SHORT).show();
+                    if (error.toString().equals(network_Error)){
+                        Toast.makeText(MainActivity.this, network_error_show, Toast.LENGTH_SHORT).show();
                     }
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(activity, error.toString(), Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                 }
             });
-
-// Add the request to the RequestQueue.
             queue.add(stringRequest);
         }
     }
+    protected void overridePendingTransitionEnter() {
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+    }
+    }
 
-}

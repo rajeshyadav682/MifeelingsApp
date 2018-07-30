@@ -27,4 +27,5 @@
     <color name="black">#000</color>
     <color name="orange">#139D57</color>
     <color name="deep_pink">#FF1493</color>
+    <color name="grey">#939393</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.rajesh.mifeelingsapp;
+package com.example.rajesh.mifeelingsapp.Home_Page;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Toast;

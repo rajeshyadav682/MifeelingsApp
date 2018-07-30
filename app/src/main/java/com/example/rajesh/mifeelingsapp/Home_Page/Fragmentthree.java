@@ -1,4 +1,4 @@
-package com.example.rajesh.mifeelingsapp;
+package com.example.rajesh.mifeelingsapp.Home_Page;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rajesh.mifeelingsapp.R;
 
 
 public class Fragmentthree extends Fragment {

@@ -1,8 +1,7 @@
-package com.example.rajesh.mifeelingsapp;
+package com.example.rajesh.mifeelingsapp.Home_Page;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 

@@ -1,4 +1,4 @@
-package com.example.rajesh.mifeelingsapp;
+package com.example.rajesh.mifeelingsapp.user_manage;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +20,8 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.rajesh.mifeelingsapp.R;
+import com.example.rajesh.mifeelingsapp.user_manage.MainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

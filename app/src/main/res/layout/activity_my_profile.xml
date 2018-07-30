@@ -2,31 +2,30 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         android:layout_height="match_parent">
         <RelativeLayout
             android:gravity="center"
             android:id="@+id/profile_layout"
             android:layout_width="match_parent"
-            android:layout_height="204dp"
+            android:layout_height="187dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            android:elevation="4dp"
-            android:background="?attr/colorPrimary"
-            android:paddingBottom="24dp"
+            android:background="@color/white"
             android:layout_alignParentLeft="true">
 
             <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_marginTop="10dp"
-            android:id="@+id/user_profile_photo"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
+                android:id="@+id/user_profile_photo"
+                android:layout_width="140dp"
+                android:layout_height="140dp" />
 
             <TextView
                 android:layout_marginTop="5dp"
@@ -35,203 +34,159 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/user_profile_photo"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="48dp"
                 android:text="id"
                 android:textColor="@color/black"
                 android:visibility="invisible"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="50dp" />
+                android:layout_marginLeft="48dp" />
         </RelativeLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="1.0dp"
+            android:layout_marginLeft="1.0dp"
+            android:layout_marginTop="1.0dp"
+            android:layout_marginBottom="1.0dp"
+            android:paddingRight="10dp"
             android:layout_below="@+id/profile_layout"
-            android:layout_marginTop="10dp"
-            android:background="#E0E0E0"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+            <EditText
+                android:id="@+id/getname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editextbg"
+                android:drawableLeft="@drawable/u"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:padding="10dp"
+                android:layout_marginRight="1.0dp"
+                android:layout_marginLeft="1.0dp"
+                android:layout_marginTop="2.0dp"
+                android:layout_marginBottom="2dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:textColor="@color/black"/>
+
+
+            <EditText
+                android:id="@+id/getphone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editextbg"
+                android:drawableLeft="@drawable/phn"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:layout_marginRight="1.0dp"
+                android:layout_marginLeft="1.0dp"
+                android:layout_marginBottom="2.0dp"
+                android:textSize="15sp"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/getgender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editextbg"
+                android:drawableLeft="@drawable/gender"
+                android:drawablePadding="10dp"
+                android:layout_marginRight="1.0dp"
+                android:layout_marginLeft="1.0dp"
+                android:layout_marginBottom="2dp"
+                android:inputType="text"
+                android:padding="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/getage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editextbg"
+                android:drawableLeft="@drawable/age"
+                android:drawablePadding="10dp"
+                android:inputType="text"
+                android:layout_marginRight="1.0dp"
+                android:layout_marginLeft="1.0dp"
+                android:layout_marginBottom="2.0dp"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/getemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editextbg"
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="10dp"
+                android:layout_marginRight="1.0dp"
+                android:layout_marginLeft="1.0dp"
+                android:layout_marginBottom="2dp"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/getpass"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="1.0dp"
+                android:layout_marginBottom="2.0dp"
+                android:drawablePadding="10dp"
+                android:layout_marginLeft="-8dp"
                 android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-                <EditText
-                    android:id="@+id/getname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/editextbg"
-                    android:drawableLeft="@drawable/user"
-                    android:drawablePadding="10dp"
-                    android:textCursorDrawable="@color/black"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/input_register"
-                    android:textColorHint="@color/input_register_hint" />
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
-                <EditText
-                    android:id="@+id/getphone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/editextbg"
-                    android:drawableLeft="@drawable/phone"
-                    android:drawablePadding="10dp"
-                    android:textCursorDrawable="@color/black"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/input_register"
-                    android:textColorHint="@color/input_register_hint" />
-
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:paddingRight="20dp"
-                android:paddingLeft="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <EditText
-                    android:id="@+id/getgender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/editextbg"
-                    android:drawableLeft="@drawable/gender"
-                    android:drawablePadding="10dp"
-                    android:textCursorDrawable="@color/black"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/input_register"
-                    android:textColorHint="@color/input_register_hint" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
-
-
-
-                <EditText
-                    android:id="@+id/getage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/editextbg"
-                    android:drawableLeft="@drawable/age"
-                    android:drawablePadding="10dp"
-                    android:textCursorDrawable="@color/black"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/input_register"
-                    android:textColorHint="@color/input_register_hint" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:layout_marginTop="5dp">
-
-
-                <EditText
-                    android:id="@+id/getemail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/editextbg"
-                    android:drawableLeft="@drawable/email"
-                    android:drawablePadding="10dp"
-                    android:textCursorDrawable="@color/black"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:singleLine="true"
-                    android:textColor="@color/input_register"
-                    android:textColorHint="@color/input_register_hint" />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:paddingLeft="20dp"
                 android:background="@color/white"
-                android:layout_marginTop="5dp"
-                android:paddingRight="20dp">
+                android:drawableLeft="@drawable/pass"
+                android:text="Android "
+                android:padding="14dp"
+                android:visibility="visible"
+                android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/getpass"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
-                    android:paddingLeft="10dp"
-                    android:drawablePadding="10dp"
-                    android:background="@color/white"
-                    android:drawableLeft="@drawable/pass"
-                    android:padding="14dp"
-                    android:text="Android "
-                    android:visibility="visible"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:id="@+id/myprofilepass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Edit"
-                    android:textColor="@color/black"
-                    android:background="@drawable/buttonborder"
-                    android:layout_marginTop="3dp"
-                    android:layout_alignParentRight="true" />
-            </RelativeLayout>
-            <LinearLayout
+            <RelativeLayout
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:background="@color/white"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:layout_height="wrap_content">
                 <Button
                     android:id="@+id/profil_edit"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="15sp"
+                    android:visibility="invisible"
                     android:textStyle="bold"
-                    android:layout_weight="1"
-                    android:background="@drawable/buttonborder"
-                    android:layout_width="wrap_content"
+                    android:background="@drawable/btnborderchanger"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="edit" />
 
                 <Button
                     android:id="@+id/profile_done"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/buttonborder"
-                    android:layout_weight="1"
+                    android:background="@drawable/btnborderchanger"
                     android:text="done"
-                    android:textColor="@color/black"
+                    android:visibility="invisible"
+                    android:textColor="@color/white"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
+            </RelativeLayout>
+
 
         </LinearLayout>
 
